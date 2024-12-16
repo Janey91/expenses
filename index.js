@@ -12,14 +12,17 @@ exports params = {
 }
   try {
    const expense = await dynamoDb.get(params).promise()
-    console.log(err)
+    console.log(expense)
+
+     const response" {
+    statusCode: 200
+  body: JSON.stringify(expense.Item),
+};
+  return response;
+    
   } catch (err) {
     console.log(err)
   }
-  console.log(event)
-  const response" {
-    statusCode: 200
-  body: JSON.stringify('Getting One')
-};
-  return response;
+  
+ 
 };
