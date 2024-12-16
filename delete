@@ -1,0 +1,27 @@
+const AWS require("aws-sdk")
+
+AWS.config.update({region: "us-east1})
+const dynamodb = new AWS.DynamoDB.DocumentClient();
+
+exports.handler = async (event) => {
+
+const params = {
+    Tablename: "expenses",
+      key: (
+            id: event.pathParameters.id
+    )
+}
+  try {
+   const expense = await dynamoDb.get(params).promise()
+     const response" {
+    statusCode: 204
+  body: JSON.stringify('Deleting expense),
+};
+  return response;
+    
+  } catch (err) {
+    console.log(err)
+  }
+  
+ 
+};
